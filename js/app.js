@@ -363,19 +363,20 @@ export const updateWeather = function (lat, lon) {
 					wind: { deg: windDirection, speed: windSpeed },
 				} = data;
 
+
 				const tempLi = document.createElement('li');
 				tempLi.classList.add('slider-item');
 				tempLi.innerHTML = `
 					<div class="card card-sm slider-card">
 
-								<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
+						<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
-								<img src=${module.getImageUrl(
-									icon
-								)} alt=${description} loading="lazy" width="48" height="48"
-									class="weather-icon" title="${description}">
+						<img src=${module.getImageUrl(
+							icon
+						)} alt=${description} loading="lazy" width="48" height="48"
+							class="weather-icon" title="${description}">
 
-								<p class="body-3">${parseInt(temp)}&deg;</p>
+						<p class="body-3">${parseInt(temp)}&deg;</p>
 
 					</div>
 				`;
@@ -390,7 +391,7 @@ export const updateWeather = function (lat, lon) {
 						<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
 						<img src=${module.getImageUrl(
-							icon
+							'direction'
 						)} alt='direction' loading="lazy" width="48" height="48"
 							class="weather-icon"  style="transform: rotate(${windDirection - 180}deg) ">
 
