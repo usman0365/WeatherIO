@@ -389,7 +389,9 @@ export const updateWeather = function (lat, lon) {
 
 						<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
-						<img src="./public/images/direction.png" alt='direction' loading="lazy" width="48" height="48"
+						<img src=${module.getImageUrl(
+							icon
+						)} alt='direction' loading="lazy" width="48" height="48"
 							class="weather-icon"  style="transform: rotate(${windDirection - 180}deg) ">
 
 						<p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))}&deg;</p>
@@ -427,7 +429,9 @@ export const updateWeather = function (lat, lon) {
 
 				li.innerHTML = `
 				<div class="icon-wrapper">
-					<img src="./public/images/${icon}.png" width="36" height="36" alt="${description}" class="weather-icon" >
+					<img src=${module.getImageUrl(
+						icon
+					)} width="36" height="36" alt="${description}" class="weather-icon" >
 
 					<span class="span">
 						<p class="title-2">${parseInt(temp_max)}</p>
