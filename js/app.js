@@ -144,7 +144,7 @@ export const updateWeather = function (lat, lon) {
 			visibility,
 			timezone,
 		} = currentWeather;
-
+		
 		const [{ description, icon }] = weather;
 
 		const card = document.createElement('div');
@@ -156,7 +156,7 @@ export const updateWeather = function (lat, lon) {
 			<div class="wrapper">
 				<p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
 
-				<img src="./assets/images/weather_icons/${icon}.png" height="64" width="64" alt=${description}
+				<img src="./public/images/weather_icons/${icon}.png" height="64" width="64" alt=${description}
 					class="weather-icon">
 			</div>
 
@@ -371,7 +371,7 @@ export const updateWeather = function (lat, lon) {
 
 								<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
-								<img src="./assets/images/weather_icons/${icon}.png" alt=${description} loading="lazy" width="48" height="48"
+								<img src="./public/images/weather_icons/${icon}.png" alt=${description} loading="lazy" width="48" height="48"
 									class="weather-icon" title="${description}">
 
 								<p class="body-3">${parseInt(temp)}&deg;</p>
@@ -388,7 +388,7 @@ export const updateWeather = function (lat, lon) {
 
 						<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
-						<img src="./assets/images/weather_icons/direction.png" alt='direction' loading="lazy" width="48" height="48"
+						<img src="./public/images/weather_icons/direction.png" alt='direction' loading="lazy" width="48" height="48"
 							class="weather-icon"  style="transform: rotate(${windDirection - 180}deg) ">
 
 						<p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))}&deg;</p>
@@ -426,7 +426,7 @@ export const updateWeather = function (lat, lon) {
 
 				li.innerHTML = `
 				<div class="icon-wrapper">
-					<img src="./assets/images/weather_icons/${icon}.png" width="36" height="36" alt="${description}" class="weather-icon" >
+					<img src="./public/images/weather_icons/${icon}.png" width="36" height="36" alt="${description}" class="weather-icon" >
 
 					<span class="span">
 						<p class="title-2">${parseInt(temp_max)}</p>
