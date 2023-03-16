@@ -108,3 +108,8 @@ export const aqiText = {
 			'Health warnings of emergency conditions. The entire population is more likely to be affected.',
 	},
 };
+
+export function getImageUrl(name) {
+	const newURl =  new URL(`../public/images/${name}.png`, import.meta.url).href;
+	return newURl
+}

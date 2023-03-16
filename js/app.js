@@ -9,7 +9,6 @@
 
 import { fetchData, url } from './api.js';
 import * as module from './module.js';
-
 /**
  * Add event listener of multiple elements
  * @param {NodeList} elements Elements node array
@@ -149,14 +148,14 @@ export const updateWeather = function (lat, lon) {
 
 		const card = document.createElement('div');
 		card.classList.add('card', 'card-lg', 'current-weather-card');
-
+		
 		card.innerHTML = `
 		<h2 class="title-2 card-title">Now</h2>
 
 			<div class="wrapper">
 				<p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
 
-				<img src="./public/images/${icon}.png" height="64" width="64" alt=${description}
+				<img src=${module.getImageUrl(icon)} height="64" width="64" alt=${description}
 					class="weather-icon">
 			</div>
 
@@ -371,7 +370,9 @@ export const updateWeather = function (lat, lon) {
 
 								<p class="body-3">${module.getHours(dateTimeUnix, timezone)}</p>
 
-								<img src="./public/images/${icon}.png" alt=${description} loading="lazy" width="48" height="48"
+								<img src=${module.getImageUrl(
+									icon
+								)} alt=${description} loading="lazy" width="48" height="48"
 									class="weather-icon" title="${description}">
 
 								<p class="body-3">${parseInt(temp)}&deg;</p>
