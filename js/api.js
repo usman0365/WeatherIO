@@ -7,7 +7,7 @@
 
 'use strict';
 
-const api_key = import.meta.env.VITE_WEATHER_IO_API_KEY;
+const api_key = "4e939f179016c9f9138e0bfc25dd1af4";
 /**
  * Fetch data from server
  * @param {string} URL API url
